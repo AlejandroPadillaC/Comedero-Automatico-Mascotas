@@ -1,6 +1,5 @@
-# Comedero-Automatico-Mascotas
+# 🐾 Comedero-Automatico-Mascotas (Verilog & FSM)
 
-# 🐾 FPGA Automated Pet Feeder (Verilog & FSM)
 
 ![Verilog](https://img.shields.io/badge/HDL-Verilog-blue.svg)
 ![FPGA](https://img.shields.io/badge/Hardware-FPGA-orange.svg)
