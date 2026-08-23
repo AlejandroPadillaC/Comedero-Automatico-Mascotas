@@ -14,9 +14,11 @@
 Este proyecto consiste en el diseño e implementación de un **comedero automático para mascotas** desarrollado en su totalidad en **Verilog HDL** para su despliegue en tarjetas FPGA. El sistema gestiona ciclos de alimentación programados, control de actuadores (servomotor o motor paso a paso) y comunicación serial sincrónica con periféricos mediante el protocolo **I2C**, todo procesado directamente a nivel de hardware lógico reconfigurable sin depender de un procesador embebido (*soft-core*) ni microcontroladores externos.
 
 ### Justificación
-Frente a las soluciones tradicionales basadas en microcontroladores y software secuencial (como Arduino o ESP32), la implementación de este sistema directamente en una FPGA aporta ventajas críticas:
-* **Paralelismo Real y Determinismo:** Manejo simultáneo e independiente del generador de pulsos PWM, la lectura continua del bus I2C y la temporización general sin latencias por interrupciones.
-* **Fiabilidad Físicamente Robusta:** La arquitectura basada en Máquinas de Estado Finito (FSM) sintetizadas en bloques lógicos elimina riesgos de bloqueos de software (*crashes*) o problemas de gestión de memoria.
+En la actualidad, muchas personas cuentan con una disponibilidad limitada de tiempo debido a compromisos laborales, académicos o personales, lo que puede dificultar la realización de ciertas actividades cotidianas que requieren horarios específicos. Esta situación puede afectar especialmente a los dueños de mascotas, ya que no siempre es posible alimentarlas en los momentos adecuados del día, lo que puede alterar sus hábitos de alimentación y afectar su bienestar.
+
+Con el propósito de mitigar esta problemática, se diseñó e implementó un prototipo de comedero automático capaz de dispensar alimento de forma programada, permitiendo satisfacer las necesidades alimenticias de la mascota sin depender de la presencia constante de su dueño. El sistema fue desarrollado empleando una tarjeta de desarrollo Altera Cyclone IV como unidad de control y un motor de accionamiento encargado del mecanismo de dispensación, ambos gobernados mediante una rutina de funcionamiento definida por el usuario.
+
+* **Fiabilidad Físicamente Robusta:** La arquitectura basada en Máquinas de Estado Finito (FSM) sintetizadas en bloques lógicos elimina riesgos de bloqueos de software o problemas de gestión de memoria.
 * **Diseño Digital Puro:** Demuestra la integración de conceptos avanzados de lógica digital, tales como controladores I2C personalizados a nivel de bit, divisores de frecuencia hardware y máquinas de estado acopladas.
 
 ---
@@ -27,18 +29,20 @@ Frente a las soluciones tradicionales basadas en microcontroladores y software s
 
 | Componente | Modelo / Tipo | Función en el Sistema |
 | :--- | :--- | :--- |
-| **Tarjeta FPGA** | Cyclone IV / Basys 3 / Nexys | Procesamiento de la lógica RTL y generación de señales de control. |
-| **Módulo RTC / Sensor** | DS3231 (I2C) / Sensor de Peso | Provee la hora en tiempo real o la masa de alimento en el plato vía I2C. |
-| **Actuador** | Servomotor SG90 / Motor Paso a Paso | Apertura y cierre del mecanismo dispensador de croquetas. |
-| **Interfaz de Usuario** | Displays 7 Segmentos / LEDs / Botones | Configuración de raciones, estado de la FSM e indicadores de error. |
-| **Alimentación** | Fuente Regulada Externa (5V/12V) | Suministro independiente para los motores y desacople de ruido eléctrico. |
+| **Tarjeta FPGA** | Altera Cyclone IV  | Procesamiento de la lógica RTL y generación de señales de control. |
+| **Módulo RTC** | DS3231 (I2C) / Modulo de tiempo| Provee la hora en tiempo real o la masa de alimento en el plato vía I2C. |
+| **Actuador** | Motor Paso a Paso 28BYJ-  | Activación del mecanismo dispensador de alimento para mascota.|
+| **Interfaz de Usuario** | Display 16x2 / Deep Switch | Configuración de raciones, estado de la FSM e indicadores de error o estado actual del dispositivo.|
+| **Alimentación** | Fuente Regulada Externa (5V/12V) | Suministro independiente para los motores. |
 
-### Jerarquía de Módulos Verilog
+## 3. Diagrama de Maquinas de Estado (FSM)
 
-```text
-top_pet_feeder/
-├── clock_divider.v        # Divisor de frecuencia para I2C y PWM
-├── i2c_master.v           # Controlador maestro de protocolo I2C
-├── fsm_main_controller.v  # Máquina de estados principal del comedero
-├── pwm_driver.v           # Controlador PWM para el movimiento del motor
-└── display_driver.v       # Decodificador para la interfaz visual
+
+
+## 4. Resultados Obtenidos
+
+* **Resultados Generales de la Implementación:** Se implementó apropiadamente la lógica digital para el control de sistemas electromecánicos, específicamente un comedero automático para perros de talla mediana. El diseño basado en Máquinas de Estados Finitos en Verilog demostró una precisión temporal y de control absoluta, garantizando que la activación del motor paso a paso coincida exactamente con las lecturas de tiempo del módulo RTC.
+
+### Prototipo Modelado/Realizado
+
+
