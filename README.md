@@ -11,7 +11,7 @@
 ## 1. Descripción y Justificación del Proyecto
 
 ### Descripción
-Este proyecto consiste en el diseño e implementación de un **comedero automático para mascotas** desarrollado en su totalidad en **Verilog HDL** para su despliegue en tarjetas FPGA. El sistema gestiona ciclos de alimentación programados, control de actuadores (servomotor o motor paso a paso) y comunicación serial sincrónica con periféricos mediante el protocolo **I2C**, todo procesado directamente a nivel de hardware lógico reconfigurable sin depender de un procesador embebido (*soft-core*) ni microcontroladores externos.
+Este proyecto consiste en el diseño e implementación de un **comedero automático para mascotas de talla pequeña y mediana** desarrollado en su totalidad en **Verilog HDL** para su despliegue en tarjetas FPGA. El sistema gestiona ciclos de alimentación programados, control de actuadores (motor paso a paso) y comunicación serial sincrónica con periféricos mediante el protocolo **I2C**, todo procesado directamente a nivel de hardware lógico reconfigurable sin depender de un procesador embebido (*soft-core*) ni microcontroladores externos.
 
 ### Justificación
 En la actualidad, muchas personas cuentan con una disponibilidad limitada de tiempo debido a compromisos laborales, académicos o personales, lo que puede dificultar la realización de ciertas actividades cotidianas que requieren horarios específicos. Esta situación puede afectar especialmente a los dueños de mascotas, ya que no siempre es posible alimentarlas en los momentos adecuados del día, lo que puede alterar sus hábitos de alimentación y afectar su bienestar.
@@ -37,6 +37,10 @@ Con el propósito de mitigar esta problemática, se diseñó e implementó un pr
 
 ## 3. Diagrama de Maquinas de Estado (FSM)
 
+En el siguiente diagrama se presenta la estructura básica y general de funcionamiento del proyecto a nivel digital, la interconexion de componentes y el
+flujo de trabajo del prototipo. 
+
+
 <p align="center">
   <img src="Pictures/Bloques.png" alt="Diagrama Bloques o Módulos Comedero" width="750">
 </p>
@@ -49,6 +53,13 @@ Con el propósito de mitigar esta problemática, se diseñó e implementó un pr
 
 ### Prototipo Modelado/Realizado
 
-![Prototipo Ensamblaje General 1](Pictures/ComederoFrontal.jpeg)
+El prototipo consolidado fue realizado por manufactura aditiva (Impresión 3D) haciendo uso de PETG un material apropiado para la manipulación y contacto con alimentos. El prototipo cuenta con la posibilidad de almacenamiento de aproximadamente 1 Kg de alimento para perros y la distribución del mismo es de porciones entre 80g y 140g, por medio de un mecanismo de hélice simple que permite controlar fácilmente por número de rotaciones el volumen suministrado.
 
-![Prototipo Ensamblaje General 2](Pictures/Comedero_Abierto.jpeg)
+<p align="center">
+  <img src="Pictures/ComederoFrontal.jpeg" alt="Diagrama Bloques o Módulos Comedero" width="750">
+</p>
+
+<p align="center">
+  <img src="Pictures/Comedero_Abierto.jpeg" alt="Diagrama Bloques o Módulos Comedero" width="750">
+</p>
+
