@@ -31,17 +31,19 @@ Con el propósito de mitigar esta problemática, se diseñó e implementó un pr
 | :--- | :--- | :--- |
 | **Tarjeta FPGA** | Altera Cyclone IV  | Procesamiento de la lógica RTL y generación de señales de control. |
 | **Módulo RTC** | DS3231 (I2C) / Modulo de tiempo| Provee la hora en tiempo real o la masa de alimento en el plato vía I2C. |
-| **Actuador** | Motor Paso a Paso 28BYJ-  | Activación del mecanismo dispensador de alimento para mascota.|
+| **Actuador** | Motor Paso a Paso 28BYJ-48 | Activación del mecanismo dispensador de alimento para mascota.|
 | **Interfaz de Usuario** | Display 16x2 / Deep Switch | Configuración de raciones, estado de la FSM e indicadores de error o estado actual del dispositivo.|
 | **Alimentación** | Fuente Regulada Externa (5V/12V) | Suministro independiente para los motores. |
 
 ## 3. Diagrama de Maquinas de Estado (FSM)
 
+![Prototipo Ensamblaje General 1](Pictures/ComederoFrontal.jpeg)
 
 
 ## 4. Resultados Obtenidos
 
 * **Resultados Generales de la Implementación:** Se implementó apropiadamente la lógica digital para el control de sistemas electromecánicos, específicamente un comedero automático para perros de talla mediana. El diseño basado en Máquinas de Estados Finitos en Verilog demostró una precisión temporal y de control absoluta, garantizando que la activación del motor paso a paso coincida exactamente con las lecturas de tiempo del módulo RTC.
+* **Consolidación Prototipo Funcional** Se logró manufacturar y concebir desde cero un prototipo físico que cumple con todos los requerimientos de diseño y funcionales correspondiente a un comedero de mascota. Con un diseño simple, estéticamente agradable y manufacturado por medio de impresión 3D.
 
 ### Prototipo Modelado/Realizado
 
