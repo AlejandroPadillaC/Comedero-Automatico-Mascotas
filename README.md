@@ -37,7 +37,9 @@ Con el propósito de mitigar esta problemática, se diseñó e implementó un pr
 
 ## 3. Diagrama de Maquinas de Estado (FSM)
 
-![Prototipo Ensamblaje General 1](Pictures/ComederoFrontal.jpeg)
+<p align="center">
+  <img src="Pictures/Bloques.png" alt="Diagrama Bloques o Módulos Comedero" width="750">
+</p>
 
 
 ## 4. Resultados Obtenidos
