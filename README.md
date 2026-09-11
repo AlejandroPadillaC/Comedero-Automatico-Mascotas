@@ -47,4 +47,4 @@ Con el propósito de mitigar esta problemática, se diseñó e implementó un pr
 
 ![Prototipo Ensamblaje General 1](Pictures/ComederoFrontal.jpeg)
 
-![Prototipo Ensamblaje General 2](Pictures/Comedero_Abierto.jpeg)
+![Prototipo Ensamblaje General 2](Pictures/Comedero Abierto.jpeg)
